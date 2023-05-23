@@ -1,6 +1,6 @@
 import pygame
-from Params import *
-import Colors
+from vizualization_lib.raft_visualisation.Params import *
+import vizualization_lib.raft_visualisation.Colors as Colors
 
 WIDTH = 1000  # ширина игрового окна
 HEIGHT = 800 # высота игрового окна
@@ -11,7 +11,7 @@ FPS = 30 # частота кадров в секунду
 class ParamWindow():
     param_window_x = 0
     param_window_y = 0
-    param_window_width = 350
+    param_window_width = 0
     param_window_height = HEIGHT
     space = 10
     btn_width = param_window_width
