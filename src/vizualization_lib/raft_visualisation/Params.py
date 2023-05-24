@@ -1,7 +1,8 @@
+# from multi_min import x_
 constant_params = {"river width": 200}
 river_w = constant_params["river width"]
 default_params = {"raft width": 150, "raft height": 50, "triangle width": 20, "triangle height": 25, "river width": 80, "river height": 50 }
-params = {"raft width": 40, "raft height": 81, "triangle width": 20, "triangle height": 30, "river width": 80, "river height": 50 }
+params = {}
 params_limits = {"raft width up": 200,
                  "raft width down": 10,
                  "raft height up": 300,

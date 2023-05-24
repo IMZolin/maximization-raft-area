@@ -6,7 +6,7 @@ from vizualization_lib.raft_visualisation.River import *
 from vizualization_lib.raft_visualisation.Window import *
 from vizualization_lib.raft_visualisation.Raft import *
 import vizualization_lib.raft_visualisation.Params as Params
-
+# from multi_min import x_ as Params
 
 param_window = ParamWindow()
 river = River()
@@ -46,8 +46,8 @@ def game_loop(sc, clock,x_s,y_s,angle_s, params, river_, WIDTH, HEIGHT):
             x = x_s[0] + WIDTH/2
 
         else:
-            x = x_s[counter]+WIDTH/2
-            y = y_s[counter]+river_['river_height']
+            x = x_s[counter] + WIDTH/2
+            y = y_s[counter] + river_['river_height']
         # x, y = river.river_corner_x + constant_params["river width"] / 2, HEIGHT / 2
             angle = angle_s[counter]
             counter += 1

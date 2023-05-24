@@ -1,46 +1,64 @@
-## Solving multi-dimensional minimization problems with restrictions
-- [Solving multi-dimensional minimization problems with restrictions](#solving-multi-dimensional-minimization-problems-with-restrictions)
+# Finding the maximum raft area of a given shape when the river turns the river by 90 degrees (+ visualisation: pygame)
+
+- [Finding the maximum raft area of a given shape when the river turns the river by 90 degrees (+ visualisation: pygame)](#finding-the-maximum-raft-area-of-a-given-shape-when-the-river-turns-the-river-by-90-degrees--visualisation-pygame)
   - [Description](#description)
   - [Get started](#get-started)
   - [Project structure](#project-structure)
   - [Results](#results)
 
+## Description
 
-### Description
-    f(x) = 4x_1+x_2+4*sqrt(1+3x_1^2+x_2^2)
-     1. Найти minf(x) на заданном отрезке с точностью [0.1, 0.01, 0.001] с помощью трех методов: метода равномерного поиска, метода пробных точек  и метода золотого сечения 
-     2. Сравнить методы. В качестве критерия использовать число обращений к вычислению функции
-     3. Сравнить методы с теоретическими оценками
+    The problem of finding the maximum area of the raft of a given shape, at which it is possible to pass the river bend in 90 degress.
+    The shape of the raft: a rectangle with two equal isosceles triangles on two opposite sides.
+    Choose the upper left corner of the river bend as the origin of coordinates (0, 0).
 
-### Get started
+## Get started
+
 ```bash
-git clone https://github.com/IMZolin/one-dimension-minimization <your project name>
+git clone https://github.com/IMZolin/maximization-raft-area <your project name>
 cd <your project name>
 pip install -r requirements.txt
 ```
 
-### Project structure
+## Project structure
+
 ```bash
-├───graphics            # images:graphics+scheme of simplex
-├───report
-│   └───lab3_opt_methods.pdf 
+├───images              # some results
+├───report              # report + presentation (ru)
+│   ├───Гвоздев_Золин_Хламкин.pptx
+│   └───coursework_opt_methods.pdf 
 ├───src                 # code
-│   ├───golden_egg.py      # Golden Ratio Method
-│   ├───main.py  # corner dots 
-│   ├───One_D_Problem_file.py # one dimension minimization problem class
-│   ├───result_analisys.py  # get results
-│   ├───test_uniform.py # test code for running uniform search method
-│   ├───result_analisys.py # get results
-│   ├───Trial_Point_Method_file.py # Trial Point Method
-└───────uniform_search.py # Uniform Search Method
+│   ├───one_d_min_lib  # One-dimensional minimization lib    
+│   │   ├───golden_egg.py # Golden Ratio Method
+│   │   ├───One_D_Problem_file.py # One dimension min class
+│   │   ├───Trial_Point_Method_file.py # Trial point Method
+│   │   └───uniform_search.py # Uniform search method
+│   ├───vizualization_lib  
+│   │   ├───Colors.py 
+│   │   ├───main.py # executable file
+│   │   ├───Params.py # Task params
+│   │   ├───Raft.py # Raft class
+│   │   ├───River.py # River class
+│   │   └───Window.py # Window with Input fields
+│   ├───zoitendeik_lib # Multivariate minimization lib
+│   │   ├───executable.py 
+│   │   └───Zoitendeik.py 
+│   ├───constraints.py  # the stages for algorithm
+│   ├───executable.py 
+│   ├───main_algorithm.py  # optimisation algorithm
+│   ├───multi_min.py # MAIN file
+│   ├───raft_parametrs.py # connection(algorithm, visualization)
+│   ├───raft.py # support Raft class for optimisation
+│   ├───Test_1.py  
+│   ├───Test_2.py 
+│   └───Test_3.py 
 ```
 
-### Results
-1. Golden Ratio Method
-<img src="images/2-gold.png" alt="golden ratio method">
-2. Trial Point Method
-<img src="images/2-tpm.png" alt="trial point method">
-3. Uniform Search Method
-<img src="images/2-us.png" alt="uniform search method">
-4. Comparison of methods
-<img src="images/2-compare.png" alt="comparison of methods">
+## Results
+
+1. Visualisation (pygame)
+<img src="images/visualisation.png" alt="visualisation">
+
+2. Example solution(ru)
+<img src="images/result1.png" alt="golden ratio method">
+<img src="images/result2.png" alt="golden ratio method">
